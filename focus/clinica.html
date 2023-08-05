@@ -11,11 +11,11 @@
     <header>
             <div class="container"><h1>UPA 24 H - VEREADOR NADIR MARIANO DE LIMA TOTEM UPA</h1></div>
             <div class="containerhora">
-                <div class="hora">00</div>
+                <div id="hora">00</div>
                 <p>:</p>
-                <div class="minuto">00</div>
+                <div id="minuto">00</div>
                 <p>:</p>
-                <div class="segundo">00</div>
+                <div id="segundo">00</div>
             </div>
     </header>
     <main>
@@ -45,7 +45,32 @@
     </footer>
 
 
+    <script>
 
+        const hora = document.getElementById('hora')
+        const minuto = document.getElementById('minuto')
+        const segundo = document.getElementById('segundo')
+        
+        const relogio = setInterval(function time(){
+        
+            let dataToday = new Date();
+            let hr = dataToday.getHours();
+            let min = dataToday.getMinutes();
+            let s = dataToday.getSeconds();
+        
+            if(hr < 10) hr = '0' + hr;
+            if(min < 10) min = '0' + min;
+            if(s < 10) s = '0' + s;
+        
+        
+            hora.textContent = hr;
+            minuto.textContent = min;
+            segundo.textContent = s;
+        
+        })
+        
+        
+        </script>
 
 </body>
 </html>
